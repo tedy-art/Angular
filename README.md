@@ -7,12 +7,13 @@
 2) A component-based framework for building scalable app.
 3) Provided collection of libraries to cover features like Routing, Forms.
 
-**Evolation**
+**Evolation :**
+
 2009 -> name: angularjs -> using JavaScript lanugage -> 2014 end of angular js
 
 2014 -> name: angular v 2.0 or angular -> in evrey 6 month angular update it's features -> using TypeScript -> now we using it
 
-*Angular is written in TypeScript language.*
+*'Angular is written in TypeScript language.'*
 <hr>
 
 # [TypeScript]:
@@ -47,6 +48,7 @@
 3) SPA dose not make request to server for every URL requests.
 
 **How Angular Helps??**
+
 1) Angular has Routing functionality to create SPA.
 2) Angular also offer SSR(Server Side Rendering) which support SPA.
 
