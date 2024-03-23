@@ -40,8 +40,20 @@ console.log('numbers list : ', nums_list);
 // Operation on array
 let result = nums_list.filter((nums_list) => nums_list > 12);
 console.log(result);
-let c = 2 /* Color.Blue */;
-console.log(c);
+// enum
+// Defining an enum named Color
+var Color;
+(function (Color) {
+    Color[Color["Red"] = 0] = "Red";
+    Color[Color["Green"] = 1] = "Green";
+    Color[Color["Blue"] = 2] = "Blue";
+})(Color || (Color = {}));
+// Using the enum
+let myColor = Color.Green;
+console.log(myColor); // Output: 1 (the numeric value of Green)
+// Accessing enum values by name
+let colorName = Color[myColor];
+console.log(colorName); // Output: Green
 // Tuple
 // Declaring a tuple
 let employee;

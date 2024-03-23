@@ -58,15 +58,21 @@ console.log(result);
 
 
 // enum
-// declaring enums
-const enum Color {
+// Defining an enum named Color
+enum Color {
     Red,
     Green,
     Blue
-}
+  }
+  
+  // Using the enum
+  let myColor: Color = Color.Green;
+  console.log(myColor); // Output: 1 (the numeric value of Green)
+  
+  // Accessing enum values by name
+  let colorName: string = Color[myColor];
+  console.log(colorName); // Output: Green
 
-let c: Color = Color.Blue;
-console.log(c);
 
 // Tuple
 // Declaring a tuple

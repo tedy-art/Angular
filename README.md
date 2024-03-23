@@ -132,18 +132,50 @@ console.log(result);
 ```
 
 **5) Enum :**
-```TypeScript
-// enum
-// declaring enums
-const enum Color {
-    Red,
-    Green,
-    Blue
+In TypeScript, an `enum` (short for enumeration) is a way to define a set of named constants. Enums are a useful feature for representing a group of related values that are known at compile time. Enums provide readable and self-descriptive names to numeric values, making the code more expressive and maintainable.
+
+Here's an example of how to define and use an enum in TypeScript:
+
+```typescript
+// Defining an enum named Color
+enum Color {
+  Red,
+  Green,
+  Blue
 }
 
-let c: Color = Color.Blue;
-console.log(c);
+// Using the enum
+let myColor: Color = Color.Green;
+console.log(myColor); // Output: 1 (the numeric value of Green)
+
+// Accessing enum values by name
+let colorName: string = Color[myColor];
+console.log(colorName); // Output: Green
+
+// Using enum values in switch case
+switch (myColor) {
+  case Color.Red:
+    console.log("The color is Red");
+    break;
+  case Color.Green:
+    console.log("The color is Green");
+    break;
+  case Color.Blue:
+    console.log("The color is Blue");
+    break;
+  default:
+    console.log("Unknown color");
+}
 ```
+
+In this example:
+- We define an `enum` named `Color`, which contains three members: `Red`, `Green`, and `Blue`.
+- Each member of the enum is assigned a numeric value starting from 0 by default. In this case, `Red` is 0, `Green` is 1, and `Blue` is 2.
+- We assign the `Green` value from the `Color` enum to the variable `myColor`.
+- We can access enum values by their names (`Color.Green`) or by their numeric values (`Color[1]`).
+- We demonstrate using enum values in a switch-case statement for better readability.
+
+Enums in TypeScript are not restricted to numeric values; you can explicitly assign string or numeric values to enum members if needed. Additionally, TypeScript provides flexibility in customizing the numeric values or starting values for enum members.
 
 **6) Tuple :**
 
@@ -184,4 +216,4 @@ It's important to note that tuples in TypeScript provide a way to express fixed-
 
 
 
-**Start from :** **01:00:34** out of **16:33:64**
+**Start from :** **01:09:00** out of **16:33:64**
