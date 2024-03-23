@@ -40,3 +40,19 @@ console.log('numbers list : ', nums_list);
 // Operation on array
 let result = nums_list.filter((nums_list) => nums_list > 12);
 console.log(result);
+let c = 2 /* Color.Blue */;
+console.log(c);
+// Tuple
+// Declaring a tuple
+let employee;
+// Initializing the tuple
+employee = ["John Doe", 30];
+// Accessing tuple elements
+console.log(employee[0]); // Output: John Doe
+console.log(employee[1]); // Output: 30
+// Updating tuple elements
+employee[0] = "Jane Smith";
+employee[1] = 35;
+// Tuple with specific types for each element
+let person;
+person = ["Alice", 25, true];

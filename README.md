@@ -131,3 +131,57 @@ let result = nums_list.filter((nums_list)=> nums_list>12);
 console.log(result);
 ```
 
+**5) Enum :**
+```TypeScript
+// enum
+// declaring enums
+const enum Color {
+    Red,
+    Green,
+    Blue
+}
+
+let c: Color = Color.Blue;
+console.log(c);
+```
+
+**6) Tuple :**
+
+In TypeScript (TS), a tuple is a data structure that allows you to store a fixed-size collection of elements of different types. Unlike arrays, which can store multiple elements of the same type and have variable length, tuples have a fixed length and each element can have its own specific type.
+
+Here's a basic example of how to define and use a tuple in TypeScript:
+
+```typescript
+// Declaring a tuple
+let employee: [string, number];
+
+// Initializing the tuple
+employee = ["John Doe", 30];
+
+// Accessing tuple elements
+console.log(employee[0]); // Output: John Doe
+console.log(employee[1]); // Output: 30
+
+// Updating tuple elements
+employee[0] = "Jane Smith";
+employee[1] = 35;
+
+// Tuple with specific types for each element
+let person: [string, number, boolean];
+person = ["Alice", 25, true];
+```
+
+In this example:
+- We declare a tuple `employee` that can hold a string (representing the employee's name) and a number (representing the employee's age).
+- We initialize the tuple with values `"John Doe"` and `30`.
+- We access elements of the tuple using index notation (`employee[0]` and `employee[1]`).
+- We update the elements of the tuple.
+- We also declare a tuple `person` with specific types for each element (`string`, `number`, and `boolean`).
+
+It's important to note that tuples in TypeScript provide a way to express fixed-size arrays where the order of the elements is significant. However, using tuples may reduce code readability in some cases, so they should be used judiciously, especially when the meaning of the elements may not be immediately obvious from their positions.
+
+
+
+
+
+**Start from :** **01:00:34** out of **16:33:64**

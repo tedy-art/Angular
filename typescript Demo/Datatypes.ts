@@ -58,3 +58,31 @@ console.log(result);
 
 
 // enum
+// declaring enums
+const enum Color {
+    Red,
+    Green,
+    Blue
+}
+
+let c: Color = Color.Blue;
+console.log(c);
+
+// Tuple
+// Declaring a tuple
+let employee: [string, number];
+
+// Initializing the tuple
+employee = ["John Doe", 30];
+
+// Accessing tuple elements
+console.log(employee[0]); // Output: John Doe
+console.log(employee[1]); // Output: 30
+
+// Updating tuple elements
+employee[0] = "Jane Smith";
+employee[1] = 35;
+
+// Tuple with specific types for each element
+let person: [string, number, boolean];
+person = ["Alice", 25, true];
