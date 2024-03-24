@@ -92,3 +92,34 @@ employee[1] = 35;
 // Tuple with specific types for each element
 let person: [string, number, boolean];
 person = ["Alice", 25, true];
+
+
+// Any
+console.log("Any : ")
+let notSure: any = 4; // number datatype
+notSure = "maybe a string instead"; //string datatype
+notSure = false; // Now it's a boolean
+
+let dynamicArray: any[] = [1, "hello", true]; // Array of any type
+
+function dynamicFunction(arg: any): any {
+    // Function that returns any type
+    return arg;
+}
+
+let result1: any = dynamicFunction("hello"); // result can hold any type of value
+
+
+// Void
+function greet(name: string): void {
+  console.log("Hello, " + name + "!");
+}
+
+function log(message: string): void {
+  console.log(message);
+}
+
+let result2: void = greet("Alice"); // Result is undefined because greet function does not return a value
+
+log("This is a log message"); // This function also returns void
+

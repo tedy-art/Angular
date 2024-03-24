@@ -213,7 +213,102 @@ In this example:
 It's important to note that tuples in TypeScript provide a way to express fixed-size arrays where the order of the elements is significant. However, using tuples may reduce code readability in some cases, so they should be used judiciously, especially when the meaning of the elements may not be immediately obvious from their positions.
 
 
+**7) Any :**
+
+In TypeScript, 
+- the `any` data type is a special type that represents a value of any data type. 
+- Variables of type `any` can hold values of any data type, and TypeScript compiler doesn't perform type checking on these variables.
+- This means that you can assign any value to a variable of type `any`, and TypeScript will not raise any compile-time errors or warnings related to type compatibility.
+
+Here's an example of using the `any` data type:
+
+```typescript
+let notSure: any = 4;
+notSure = "maybe a string instead";
+notSure = false; // Now it's a boolean
+
+let dynamicArray: any[] = [1, "hello", true]; // Array of any type
+
+function dynamicFunction(arg: any): any {
+    // Function that returns any type
+    return arg;
+}
+
+let result: any = dynamicFunction("hello"); // result can hold any type of value
+```
+
+- While using `any` can be convenient when working with values of unknown or dynamic types, it comes with some trade-offs. 
+- Specifically, using `any` can bypass TypeScript's static type checking, which can lead to runtime errors if incompatible operations are performed on variables of type `any`. 
+- Therefore, it's generally recommended to avoid using `any` when possible and instead opt for more specific types to take advantage of TypeScript's type safety features. 
+- However, there are cases where using `any` may be necessary, such as when working with third-party libraries that lack TypeScript definitions or when dealing with data of unknown types.
+
+**8) Void :**
+
+In TypeScript, 
+- the `void` data type is used to indicate the absence of any type. 
+- It is typically used as the return type of functions that do not return a value. 
+- Functions with a return type of `void` can return `undefined` or no value at all.
+
+Here's an example of using the `void` data type:
+
+```typescript
+function greet(name: string): void {
+    console.log("Hello, " + name + "!");
+}
+
+function log(message: string): void {
+    console.log(message);
+}
+
+let result: void = greet("Alice"); // Result is undefined because greet function does not return a value
+
+log("This is a log message"); // This function also returns void
+```
+
+In this example:
+- The `greet` function takes a `name` parameter of type `string` and logs a greeting message to the console. Since the function does not return a value, its return type is specified as `void`.
+- Similarly, the `log` function takes a `message` parameter of type `string` and logs the message to the console. It also has a return type of `void`.
+
+- Using the `void` return type can be useful for functions that perform actions without producing a result that needs to be used elsewhere in the code. 
+- It helps enforce clarity and intention in your function signatures, indicating to other developers that the function does not return a meaningful value.
+
+**9) Never :**
+
+In TypeScript, 
+- there is no specific "never" data type. 
+- However, TypeScript has a special type called `never` that represents the type of values that never occur. 
+- The `never` type is used to indicate values that do not exist or functions that never return a value or always throw an error.
+
+Here's how `never` is typically used:
+
+1. **Functions that never return:**
+   ```typescript
+   function throwError(message: string): never {
+       throw new Error(message);
+   }
+   ```
+   In this example, the function `throwError` always throws an error and never returns a value. Therefore, its return type is `never`.
+
+2. **Functions that never complete:**
+   ```typescript
+   function infiniteLoop(): never {
+       while (true) {
+           // Infinite loop
+       }
+   }
+   ```
+   This function `infiniteLoop` never completes its execution because it's an infinite loop. It never returns, so its return type is `never`.
+
+3. **Type guards:**
+   ```typescript
+   function isString(value: any): value is string {
+       return typeof value === "string";
+   }
+   ```
+   Here, `isString` is a type guard function that checks if the value passed to it is of type `string`. If the condition is true, it returns `true`, narrowing the type of the value to `string`. If the condition is false, it returns `false`, and the type of the value remains unchanged. The return type of this function is `boolean`, but the use of the `never` type comes into play when it's used in type checking.
+
+- The `never` type is useful for handling scenarios where a value or a function is expected never to occur or never to complete its execution.
+- It helps TypeScript perform more accurate type checking and can be used to express certain program behaviors more precisely.
 
 
-
-**Start from :** **01:09:00** out of **16:33:64**
+**Functions :**
