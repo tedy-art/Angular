@@ -52,7 +52,11 @@
 1) Angular has Routing functionality to create SPA.
 2) Angular also offer SSR(Server Side Rendering) which support SPA.
 
-**Data Types**
+<hr>
+
+# [Data Types :]
+
+<hr>
 
 1) string
 2) numbers
@@ -310,5 +314,52 @@ Here's how `never` is typically used:
 - The `never` type is useful for handling scenarios where a value or a function is expected never to occur or never to complete its execution.
 - It helps TypeScript perform more accurate type checking and can be used to express certain program behaviors more precisely.
 
+<hr>
 
-**Functions :**
+# Functions :
+
+<hr>
+
+1) Different ways to write functions
+2) Generic Function
+3) Optional Parameter
+4) Required Parameter
+5) Rest Parameter
+
+**What is a function??**
+- a function is a block of organized, reusable that is used to perform a single related action.
+
+**Syntax :**
+- you can define a function using the `function` keyword or arrow function syntax:
+
+*Simple function syntax :*
+```typescript
+function greet(name: string): void {
+  console.log("Hello,"+ name +!);
+}
+```
+
+*arrow function syntax :*
+```typescript
+let multiply = (x: number, y:number): number => {
+  return x * y;
+}
+```
+
+**Parameters :**
+
+- Parameters in function served as a pleaceholders for values that will be passed into the function when it is called.
+- parameters are allow you to provide inputs to the function, which the function can then use to perform it's operations.
+- You can specify types to enforce type checking.
+
+**Defining Parameter :**
+*syntax :*
+```typescript
+function function_name(parameter1: type, parameter2: type): void{
+  expression
+}
+```
+
+```typescript
+
+```
