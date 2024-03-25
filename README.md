@@ -382,6 +382,7 @@ Hello, Tejas! your are 27 years old.
 - Rest Parameters
 
 1) Optional Parameters : 
+
     - you can mark parameter optional by appending `?` to their name. e.g. name?, age?
     - Optional parameter allow you to call a function with or without providing a value as a parameter.
     ```typescript
@@ -397,4 +398,33 @@ Hello, Tejas! your are 27 years old.
     let hi1 = greet3() //Hello, Annonymous! and i don't know how old i am.
     let hi2 = greet3('Tejas', 27) //Hello, Tejas! your are 27 years old.
     let hi3 = greet3('', 27) //Hello, Annonymous! and i don't know how old i am.
+    ```
+
+2) Default parameter
+
+    - TS allows you to provide default values for parameter.
+    - If value is not povided for a parameter when a function is called, the default value will be used.
+
+    ```typescript
+    function greet4(name: string = "world"){
+        console.log(`Hello, ${name}!`)
+    }
+
+    // calling
+    let hi4 = greet4() // Hello, world!
+    let hi5 = greet4("Tejas") // Hello, Tejas!
+    ```
+
+3) Rest Parameter:
+
+    - TS supports rest parameter which allow you to represent an indefinite number of arguments as an array.
+    - Rest parameters are denoted by three dot(`...`) followed by the parameter name.
+    ```typescript
+    function sum(...numbers: number[]) {
+        return numbers.reduce((acc, curr) => acc + curr, 0);
+    }
+
+    const add1 = sum(1, 2, 3, 4, 5); // Returns 15 (1 + 2 + 3 + 4 + 5)
+    const add2 = sum(10, 20, 30);     // Returns 60 (10 + 20 + 30)
+    const add3 = sum();               // Returns 0 (no arguments provided, default sum is 0)
     ```
