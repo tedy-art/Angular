@@ -353,6 +353,7 @@ let multiply = (x: number, y:number): number => {
 - You can specify types to enforce type checking.
 
 **Defining Parameter :**
+
 *syntax :*
 ```typescript
 function function_name(parameter1: type, parameter2: type): void{
@@ -361,5 +362,39 @@ function function_name(parameter1: type, parameter2: type): void{
 ```
 
 ```typescript
+// Defining function
+// name and age is parameter
+function greet33(name: string, age: number): void{
+    console.log(`Hello, ${name}! your are ${age} years old.`);
+}
 
+let hi = greet33('Tejas', 27)
 ```
+Output:
+```
+Hello, Tejas! your are 27 years old.
+```
+
+**Parameter Types :**
+
+- Optional Parameters
+- Default Parameters
+- Rest Parameters
+
+1) Optional Parameters : 
+    - you can mark parameter optional by appending `?` to their name. e.g. name?, age?
+    - Optional parameter allow you to call a function with or without providing a value as a parameter.
+    ```typescript
+    function greet3(name?: string, age?: number){
+        if (name){
+            console.log(`Hello, ${name}! your are ${age} years old.`);
+        }
+        else{
+            console.log(`Hello, Annonymous! and i don't know how old i am.`)
+        }
+    }
+
+    let hi1 = greet3() //Hello, Annonymous! and i don't know how old i am.
+    let hi2 = greet3('Tejas', 27) //Hello, Tejas! your are 27 years old.
+    let hi3 = greet3('', 27) //Hello, Annonymous! and i don't know how old i am.
+    ```
