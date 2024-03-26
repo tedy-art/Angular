@@ -4,7 +4,7 @@ function greet33(name, age) {
 }
 let hi = greet33('Tejas', 27);
 // type of parameter
-// Optional Parameter
+// Optional Parameter `?` means dose not required parameter in a function
 function greet3(name, age) {
     if (name) {
         console.log(`Hello, ${name}! your are ${age} years old.`);
@@ -29,6 +29,13 @@ function sum(...numbers) {
 const add1 = sum(1, 2, 3, 4, 5); // Returns 15 (1 + 2 + 3 + 4 + 5)
 const add2 = sum(10, 20, 30); // Returns 60 (10 + 20 + 30)
 const add3 = sum(); // Returns 0 (no arguments provided, default sum is 0)
+const add4 = sum(...[54, 5, 4, 12, 32, 88]); // Return 195
 console.log(add1);
 console.log(add2);
 console.log(add3);
+console.log(add4);
+// Return type
+function add(x, y) {
+    return x + y;
+}
+let sum_num = add(10, 20); // 30

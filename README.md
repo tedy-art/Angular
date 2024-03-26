@@ -424,7 +424,22 @@ Hello, Tejas! your are 27 years old.
         return numbers.reduce((acc, curr) => acc + curr, 0);
     }
 
-    const add1 = sum(1, 2, 3, 4, 5); // Returns 15 (1 + 2 + 3 + 4 + 5)
+    const add1 = sum(1, 2, 3, 4, 5);  // Returns 15 (1 + 2 + 3 + 4 + 5)
     const add2 = sum(10, 20, 30);     // Returns 60 (10 + 20 + 30)
     const add3 = sum();               // Returns 0 (no arguments provided, default sum is 0)
     ```
+
+**Return Type :**
+You can specify the return type of a function using `: return type`.
+
+```typescript
+// `: number` is a return type of add function.
+function add(x: number, y:number): number{
+    return x + y;
+}
+
+let sum_num = add(10, 20); // 30
+```
+
+# Classes :
+
