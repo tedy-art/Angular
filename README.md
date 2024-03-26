@@ -443,3 +443,59 @@ let sum_num = add(10, 20); // 30
 
 # Classes :
 
+In TypeScript:
+    - classes are fundamental feature of object-oriented programming(OOP) that allow you to create blueprints for objects.
+    - They provide a way to define both the structure(properties) and behavior(methods) of objects in a clear and reusable manner.
+
+    **constructor :** 
+        
+        - A constructor ia a special function that exists inside a class,that is called only once when the object is created.
+        - classes are uniqe, and therefore so are the constructor function calls.
+
+Ex.
+```typescript
+// Creating class using keyword 'class'
+class Person {
+    // firstName and lastName are properties of the class
+    firstName : string; // property 1
+    lastName : string; // property 2
+    id: number
+    constructor(firstName: string, lastName : string){
+        this.firstName = firstName; // initialize object's properties
+        this.lastName = lastName; // initialize object's properties
+    }
+    getFullName(): string {
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+
+const john = new Person('John', 'Doe');
+console.log(john.getFullName());
+```
+
+**Methods in class :**
+
+- We can create a method as well
+- to that we have to give that method name followed by round bracket`` then it's data type
+
+syntax:
+```typescript
+..class..
+...
+
+    methodname(): datatype{
+      expressions
+    }
+...
+...
+```
+
+```typescript
+...
+...
+getFullName(): string {
+    return `${this.firstName} ${this.lastName} ${this.id}`;
+}
+...
+...
+```
