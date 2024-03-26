@@ -4,8 +4,10 @@ class Person {
     constructor(firstName, lastName, id) {
         this.firstName = firstName; // initialize object's properties
         this.lastName = lastName; // initialize object's properties
-        this.id = id; //
+        this.id = id; // initialize object's properties
     }
+    // We can create a method as well
+    // to that we have to give that method name folloewed by round bracket then it's data type
     getFullName() {
         return `${this.firstName} ${this.lastName} ${this.id}`;
     }
