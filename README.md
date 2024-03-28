@@ -580,6 +580,8 @@ dog.move(); // Buddy moved 0 meters
 3) Hierarchical inheritance 
 4) Hybried Inheritance(Using interfaces)
 
+<hr>
+
 1) Single Inheritace:
     - TypeScript supports single inheritance, where a class can inherit from only one superclass.
     - This is most common inheritance.
