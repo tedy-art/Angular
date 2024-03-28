@@ -490,12 +490,175 @@ syntax:
 ...
 ```
 
+Example :
 ```typescript
-...
-...
-getFullName(): string {
-    return `${this.firstName} ${this.lastName} ${this.id}`;
+class Person {
+    firstName : string;
+    lastName : string;
+    id: number
+    constructor(firstName: string, lastName : string){
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    // Creating method new method
+    getFullName(): string {
+        return `${this.firstName} ${this.lastName}`;
+    }
 }
-...
-...
+
+const john = new Person('John', 'Doe');
+console.log(john.getFullName());
 ```
+
+**Class Instance :**
+
+```typescript
+class MyClass {
+  greeting: string;
+
+  constructor(message: string) {
+    this.greeting = message;
+  }
+
+  greet() {
+    return `Hello, ${this.greeting}!`;
+  }
+}
+
+// Create an instance of MyClass using `new` keyword
+const instance = new MyClass("world");
+
+// Call the greet method of the instance
+console.log(instance.greet()); // Outputs: Hello, world!
+```
+
+<h4>types of Inheritance</h4>
+
+# 1) inheritance :
+
+In Ts:
+    - you can achive inheritance by using the `extends` keyword.
+    - This allow a class(child class) to inherit properties and methods from another class(parent class)
+
+Ex. of inheritance :
+```typescript
+class Animal{
+    name: string;
+
+    constructor(name: string){
+        this.name = name;
+    }
+
+    move(distance: number = 0): void{
+        console.log(`${this.name} moved ${distance} meters`);
+    }
+}
+
+class Dog extends Animal{
+    constructor(name: string){
+        super(name);
+    }
+
+    bark():void{
+        console.log(`${this.name} barks`);
+    }
+}
+
+// create an instance of Dog
+const dog = new Dog("Buddy");
+
+// Accesing properties and methods from Animal(parent class)
+dog.move(10); // Buddy moved 10 meters
+
+dog.move(); // Buddy moved 0 meters
+```
+
+**Types of Inheritance :**
+1) Single inheritance 
+2) Multilevel Inheritance
+3) Hierarchical inheritance 
+4) Hybried Inheritance(Using interfaces)
+
+1) Single Inheritace:
+    - TypeScript supports single inheritance, where a class can inherit from only one superclass.
+    - This is most common inheritance.
+
+    Syntax:
+    ```typescript
+    class Animal {
+    // superclass
+    }
+
+    class Dog extends Animal {
+    // subclass
+    }
+    ```
+
+2) Multilevel Inheritance:
+    - This involves a chain of inheritance, where a subclass(parent class) inherits from a superclass(grand parent class), and another subclass(grand child class) inherits from that subclass(parent class), forming a hierarchy.
+
+    ```typescript
+    class Animal {
+      // superclass
+    }
+
+    class Mammal extends Animal {
+      // subclass
+    }
+
+    class Dog extends Mammal {
+      // subclass
+    }
+    ```
+
+3) Hierarchical Inheritance : 
+    - In this type of inheritance, multiple subclasses inherit from a single superclass.
+
+    ```typescript
+    class Animal {
+      // superclass
+    }
+
+    class Dog extends Animal {
+      // subclass
+    }
+
+    class Cat extends Animal {
+      // subclass
+    }
+    ```
+
+4) Hybrid Inheritance (Using Interfaces): 
+    - TypeScript supports hybrid inheritance through the use of interfaces.
+    - While classes can't directly inherit from multiple classes, they can implement multiple interfaces, allowing for a form of multiple inheritance.
+
+    ```typescript
+    interface Walkable {
+      walk(): void;
+    }
+
+    interface Flyable {
+      fly(): void;
+    }
+
+    class Bird implements Walkable, Flyable {
+      walk(): void {
+        console.log("Bird walks");
+      }
+
+      fly(): void {
+        console.log("Bird flies");
+      }
+    }
+    ```
+
+# Encapsulation : 
+
+- Encapsulation refers to the bunding of data (properties) and methods(function) that operate the data in a single unit, known as class.
+- Access modifiers control the visability of these memebers within the class and from the outside class.
+
+*TypeScript Supports tree acces-modifiers :*
+1) public 
+2) private
+3) protected
