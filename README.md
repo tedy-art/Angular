@@ -788,4 +788,51 @@ In TS, you can achive abstraction through abstract classes and methods:
 1. Abstract classes:
   - An abstract class is a class that cannot be instantiated directly.
   - It serves as a blueprint for other classes and may contain abstract methods and regular methods.
-  
+
+```typescript
+abstract class Shape {
+  abstract calculateArea(): number; // Abstract method (no implementation)
+
+  display(): void {
+    console.log("Displaying shape");
+  }
+}
+
+class Circle extends Shape {
+  radius: number;
+
+  constructor(radius: number) {
+    super();
+    this.radius = radius;
+  }
+
+  calculateArea(): number { // Implementation of abstract method
+    return Math.PI * this.radius ** 2;
+  }
+}
+
+const circle = new Circle(5);
+console.log(circle.calculateArea()); // Outputs: 78.53981633974483
+circle.display(); // Outputs: Displaying shape
+
+```
+
+2. Abstract Method: 
+  - Abstract methods are methods declared within an abstract class but without any implementation.
+  - Subclasses must provide their own implementation of these methods.
+
+```typescript
+abstract class Printer {
+  abstract printDocument(document: string): void;
+}
+
+class LaserPrinter extends Printer {
+  printDocument(document: string): void {
+    console.log(`Printing document using laser printer: ${document}`);
+  }
+}
+
+const laserPrinter = new LaserPrinter();
+laserPrinter.printDocument("Report"); // Outputs: Printing document using laser printer: Report
+
+```
