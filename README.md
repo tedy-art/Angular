@@ -741,3 +741,51 @@ Accssing private member variable : 2
 Accssing protected member variable : 3
 Accessing protected variable from Myclass to subclass : 6
 ```
+
+# Polymorphism :
+- TS supports polymorphism, allowing objects of different classes to be treated as objects of a common superclass.
+- This allow for code reuse and flexibility in designing class hierarchies.
+- Ploymorphism is often achived through method overriding, where subclasses provide their own implimentation of methods defined in their superclass.
+
+```typescript
+class Animal {
+  makeSound(): string {
+    return 'Animal makes a sound';
+  }
+}
+
+class Dog extends Animal {
+  makeSound(): string {
+    return 'Woof!';
+  }
+}
+
+class Cat extends Animal {
+  makeSound(): string {
+    return 'Meow!';
+  }
+}
+
+// Creating instances of different animals
+const animal = new Animal();
+const dog = new Dog();
+const cat = new Cat();
+
+// Calling the makeSound method on different objects
+console.log(animal.makeSound()); // Outputs: Animal makes a sound
+console.log(dog.makeSound());    // Outputs: Woof!
+console.log(cat.makeSound());    // Outputs: Meow!
+```
+
+
+# Abstraction
+- hiding the complex implementation details of a class and only showing necessary features and functionalities.
+- focus on what an object dose reather than how it dose it, thus simplifying usage of complex systems.
+
+
+In TS, you can achive abstraction through abstract classes and methods:
+
+1. Abstract classes:
+  - An abstract class is a class that cannot be instantiated directly.
+  - It serves as a blueprint for other classes and may contain abstract methods and regular methods.
+  
