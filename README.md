@@ -836,3 +836,219 @@ const laserPrinter = new LaserPrinter();
 laserPrinter.printDocument("Report"); // Outputs: Printing document using laser printer: Report
 
 ```
+
+# Interface :
+
+- an interface is like a contract or a blueprint that defines the structure of an object in TS.
+- It specifies what properties an object have and their types.
+- Interface are extensively used to enforce type-checking and provide documentation for code.
+
+Syntax:
+```typescript
+interface interface_name {  
+          // variables' declaration  
+          // methods' declaration  
+}  
+```
+- An interface is a keyword which is used to declare a TypeScript Interface.
+- An interface_name is the name of the interface.
+- An interface body contains variables and methods declarations.
+
+**Purpose Of Interface :**
+
+- Interfaces help ensure that objects in your code conform to a specific shape or structure.
+- They promote code consistency and maintainability by enforcing a standard way of defining object properties.
+
+Ex.
+```typescript
+interface OS {
+    // Variable Declaration
+    name: String;
+    language: String;
+}
+// Method declaration
+let OperatingSystem = (type: OS): void => {
+  console.log('Android ' + type.name + ' has ' + type.language + ' language.');
+};
+let Oreo = {name: 'O', language: 'Java'}
+OperatingSystem(Oreo);
+
+let OperatingSystem1 = (type:OS) =>{
+    console.log(`Framework ${type.name} has ${type.language} language.`);
+};
+let Oreo1 = {name:'Angular', language:'TypeScript'};
+OperatingSystem1(Oreo1);
+```
+
+**Use of Interface :**
+
+We can use the interface for the following things:
+  - Validating the specific structure of properties
+  - Objects passed as parameters
+  - Objects returned from functions.
+
+**Extenting Interface Or Interface Inheritance :**
+
+We can inherit the interface from the other interfaces. In other words, Typescript allows an interface to be inherited from zero or more base types.
+
+The base type can be a class or interface. We can use the "extends" keyword to implement inheritance among interfaces.
+
+Syntax
+```typescript
+child_interface extends parent interface{
+  // expresions
+}
+```
+
+Example:
+```typescript
+// Interface Inheritance
+interface Person{
+  name: string;
+  age: number;
+}
+// Interface Inherit
+interface Employees extends Person{
+  gender: string;
+  empCode: number;
+}
+let empObj = <Employees>{};
+empObj.name = "Tejas";
+empObj.age = 26;
+empObj.gender = "Male";
+empObj.empCode = 54121
+
+console.log(`Name ${empObj.name}.`); // Name Tejas
+console.log(`Employee code: ${empObj.empCode}.`) // Employee code 54121
+```
+
+**multiple interface inheritance :**
+
+Syntax
+```typescript
+child_interface extends parent1, parent2 interface{
+  // expresions
+}
+```
+
+Example:
+```typescript
+interface Person{
+  name: string;
+}
+
+interface PersonDetail{
+  age: number;
+  gender: string;
+}
+
+// multiple interface inheritance
+interface Employee extends Person, PersonDetail{
+  empCode: number;
+}
+
+let empObj = <Employee>{};
+empObj.name = "Tejas";
+empObj.age = 26;
+empObj.gender = "Male";
+empObj.empCode = 54121
+
+console.log(`Name ${empObj.name}.`); // Name Tejas
+console.log(`Employee code: ${empObj.empCode}.`) // Employee code 54121
+```
+
+**Opional properties :**
+
+- TypeScript Opional properties type provides a way of defining the parts that are not necessarily required.
+- In TypeScript, you can define optional properties in an interface, in a class, in an object, or in a type by using the ‘?’ modifier after the property name.
+- Optional properties allow to specify that a property may or may not be present on an object of that type.
+- Optional Properties can be useful when not all properties are required.
+
+Syntax:
+```typescript
+propertyName? : type;
+```
+
+Example:
+```typescript
+// Optional properties
+interface Employees{
+  name: string;
+  designation?: string;
+  age: number;
+}
+
+const employee1: Employees = {
+  name: "John",
+  age: 30,
+};
+
+const employee2: Employee ={
+  name: "Jassica",
+  designation: "Sw Developer",
+  age: 25
+};
+
+console.log(employee1) // { name: 'John', age: 30 }
+console.log(employee2) // { name: 'Jassica', designation: 'Sw Developer', age: 25 }
+```
+
+**Object destructuring :**
+
+- Object destructuring is a feature in JavaScript and TypeScript that allows you to extract properties from objects and bind them to variables in a more concise way.
+- It provides a convenient syntax to extract multiple values from objects and assign them to variables, making your code cleaner and easier to read.
+
+```typescript
+const PersonInfo = {
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 30,
+};
+
+// destructuring assignment
+const { firstName, lastName, age } = PersonInfo;
+
+console.log(firstName); // John
+console.log(lastName); // Doe
+console.log(age); // 30
+```
+
+Object destructuring is especially useful when working with function parameters. It allows you to easily extract properties from function arguments and use them directly within the function body:
+
+```typescript
+
+// Object destructuring
+const PersonInfo = {
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 30,
+};
+
+// destructuring assignment
+const { firstName, lastName, age } = PersonInfo;
+
+console.log(firstName); // John
+console.log(lastName); // Doe
+console.log(age); // 30
+
+// Function with object parameter
+function printPerson({ firstName, lastName, age }: { firstName: string, lastName: string, age: number }) {
+  console.log(`Name: ${firstName} ${lastName}, Age: ${age}`);
+}
+
+// Calling the function with an object argument
+printPerson({ firstName: 'Jane', lastName: 'Doe', age: 25 }); // Name: Jane Doe, Age: 25
+```
+
+// Array destructuring
+```typescript
+// Array with values
+const numbers = [1, 2, 3, 4, 5];
+
+// Destructuring assignment
+const [first, second, third] = numbers;
+
+console.log(first); // Outputs: 1
+console.log(second); // Outputs: 2
+console.log(third); // Outputs: 3
+```
